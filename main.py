@@ -21,7 +21,7 @@ response = requests.get(api_endpoint, params=params)
 response.raise_for_status()
 weather_condition = response.json()['weather'][0]['id']
 temperature = response.json()['main']['temp']
-if weather_condition < 900:
+if weather_condition < 700:
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
